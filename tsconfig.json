@@ -1,0 +1,37 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@component/*": ["component/common/*"],
+			"@view/*": ["component/view/*"],
+			"@type/*": ["config/type/*"],
+			"@init/*": ["config/init/*"],
+			"@reducer/*": ["config/reducer/*"],
+		},
+		"lib": [ "dom", "dom.iterable", "esnext" ],
+		"allowJs": true,
+		"skipLibCheck": true,
+		"strict": false,
+		"noEmit": true,
+		"incremental": true,
+		"module": "esnext",
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"preserveSymlinks": true,
+		"jsx": "preserve",
+		"sourceMap": true,
+		"noResolve": false,
+		"strictNullChecks": true,
+		"allowUnreachableCode": false,
+		"noImplicitAny": false,
+		"removeComments": false,
+		"forceConsistentCasingInFileNames": true,
+		"allowSyntheticDefaultImports": true,
+		"downlevelIteration": true,
+		"outDir": "built"
+	},
+	"include": [ "next-env.d.ts", "**/*.ts", "**/*.tsx" ],
+	"exclude": [ "node_modules", ".next", "out" ]
+}

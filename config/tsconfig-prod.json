@@ -1,0 +1,21 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "..",
+		"paths": {
+			/** 프로젝트 전용 */
+			"@component/*": ["component/common/*"],
+			"@view/*": ["component/view/*"],
+			"@type/*": ["config/type/*"],
+			"@init/*": ["config/init/*"],
+			"@reducer/*": ["config/reducer/*"],
+			
+			/** 공용 */
+			"@common/*": ["modules/component/*"],
+			"@config/*": ["modules/config/*"],
+			"@style/*": ["modules/style/scss/*"],
+			"@image/*": ["modules/style/image/*"],
+			"@font/*": ["modules/style/font/*"]
+		}
+	}
+}
