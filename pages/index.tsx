@@ -41,13 +41,15 @@ import axios from "axios";
 
 // };
 
-export default function Home() {
+const Home = () => {
 
 	return (
-	<div>
+	<main>
 		<h1>Next.js / 테스트로직 - Alias + Security</h1>
 		{/* <Counter /> */}
-	</div>
+	</main>
 	);
 
 };
+
+export default React.memo(Home);

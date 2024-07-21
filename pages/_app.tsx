@@ -1,106 +1,62 @@
-import React, { useEffect } from "react";
-// import { Provider } from "react-redux";
-// import { AuthProvider } from "../config/context/AuthProvider";
+import React, { useState, useCallback, useEffect } from "react";
+import { AppProps } from "next/app";
 
-import Router from 'next/router';
-import { AppProps } from 'next/app';
+/** 전역 상태관리 */
+import { Provider } from "react-redux";
+import store from "../config/Store";
+import Header from "component/Header";
 
+import "../style/main.scss"
+import "../style/header.scss"
 
+console.log(`
 
-// import store from "../config/Store";  // 상태관리를 위한 Redux 스토어 import
+  /$$$$$$  /$$   /$$ /$$      /$$ /$$$$$$ /$$   /$$
+ /$$__  $$| $$  | $$| $$$    /$$$|_  $$_/| $$$ | $$
+| $$  \\__/| $$  | $$| $$$$  /$$$$  | $$  | $$$$| $$
+|  $$$$$$ | $$  | $$| $$ $$/$$ $$  | $$  | $$ $$ $$
+ \\____  $$| $$  | $$| $$  $$$| $$  | $$  | $$  $$$$
+ /$$  \\ $$| $$  | $$| $$\\  $ | $$  | $$  | $$\\  $$$
+|  $$$$$$/|  $$$$$$/| $$ \\/  | $$ /$$$$$$| $$ \\  $$
+ \\______/  \\______/ |__/     |__/|______/|__/  \\__/
 
-import "../style/test.scss";
-// import { useRouter } from "next/router";
-// import { axiosMain } from "config/Axios";
-// import NProgress from 'nprogress';
-// import 'nprogress/nprogress.css'; // 스타일시트도 함께 임포트해야 합니다.
+`);
+
+interface Active { side:boolean; modal:boolean; }
 const App = ({ Component, pageProps }:AppProps) => {
-	// const router = useRouter();
-
-	// useEffect(() => {
-	//   const checkAuth = async () => {
-	// 	NProgress.start();
-	// 	try {
-	// 	  const response = await axiosMain.get(`/profile`);
-	// 	  if (!response.data) {
-	// 		router.push('/login');
-	// 	  }
-	// 	} catch (error) {
-	// 	  router.push('/login');
-	// 	} finally {
-	// 	//   NProgress.done();
-	// 	}
-	//   };
-  
-	//   checkAuth();
-	// }, [router]);
-	// useEffect(() => {
-	// 	console.log("app쪽이 먼저냐")
-	// 	const handleRouteChange = (url: string) => {
-	// 	  // 사용자 인증 상태 확인 로직 (여기서는 가정)
-	// 	  const isLoggedIn = document.cookie.includes("token=valid");  // 쿠키에서 인증 토큰 유무 확인
 	
-	// 	  // 로그인되지 않은 상태에서 보호된 페이지에 접근 시 로그인 페이지로 리디렉션
-	// 	  if (!isLoggedIn && url !== '/login') {
-	// 		Router.push('/login');
-	// 	  }
-	// 	};
-	
-	// 	Router.events.on('routeChangeStart', handleRouteChange);
-	// 	return () => {
-	// 	  Router.events.off('routeChangeStart', handleRouteChange);
-	// 	};
-	//   }, []);
+	/** Header 메뉴 활성화 / 비활성화 여부 */
+	const [ active, setActive ] = useState<Active>({
+		side: false, modal: false,
+	});
 
+	/** Header 메뉴 활성화 / 비활성화 함수 */
+	const onActive = useCallback((v:keyof Active) => {
+		setActive((prev:Active) => ({
+			...active, [v]: !prev[v]
+		}));
+	}, []);
 
+	/** Header 메뉴 비활성화 */
+	const onClose = useCallback(() => {
+		setActive(active);
+	}, []);
 
-	
-	// <Provider store={store}>
-		
-	// </Provider>
-	return (<Component {...pageProps} />
+	/** Header 메뉴 활성화 여부에 따라 ROOT 스크롤 삭제 OR 생성 */
+	useEffect(() => {
+
+		const html = document.documentElement;
+		if(Object.values(active).some(a => a)) html.style.overflow = `hidden`;
+		else html.style.overflow = `revert`;
+
+	}, [active]);
+
+	return (
+	<Provider store={store}>
+		<Header active={active} onActive={onActive} onClose={onClose} />
+		<Component {...pageProps} />
+	</Provider>
 	);
-
 };
 
 export default React.memo(App);
-
-
-
-
-// import { useEffect } from 'react';
-// import { useRouter } from 'next/router';
-// import axios from 'axios';
-// import App from 'next/app';
-// import { axiosMain } from 'config/Axios';
-
-// class MyApp extends App {
-//   static async getInitialProps(appContext) {
-//     const appProps = await App.getInitialProps(appContext);
-//     const { ctx } = appContext;
-
-//     // if (ctx.req) { // 서버 사이드에서만 실행
-//     //   try {
-//     //     const { cookie } = ctx.req.headers;
-//     //     const response = await axiosMain.get(`/profile`);
-
-//     //     if (!response.data) {
-//     //       ctx.res.writeHead(302, { Location: '/login' });
-//     //       ctx.res.end();
-//     //     }
-//     //   } catch (error) {
-//     //     ctx.res.writeHead(302, { Location: '/login' });
-//     //     ctx.res.end();
-//     //   }
-//     // }
-
-//     return { ...appProps };
-//   }
-
-//   render() {
-//     const { Component, pageProps } = this.props;
-//     return <Component {...pageProps} />;
-//   }
-// }
-
-// export default MyApp;
