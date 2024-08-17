@@ -97,3 +97,21 @@
 	75% { opacity: 0; transform: scale(1.5); }
 	100% { opacity: 0; }
 }
+
+/** Swiper 데이터 영역 Animation */
+@keyframes swiper-data-slide-down {
+	from { transform: translateY(-36px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
+}
+@keyframes swiper-data-slide-up {
+	from { transform: translateY(36px); opacity: 0; }
+	to { transform: translateY(0); opacity: 1; }
+}
+@keyframes swiper-data-slide-right {
+	from { transform: translateX(-48px); opacity: 0; }
+	to { transform: translateX(0); opacity: 1; }
+}
+@keyframes swiper-data-slide-left {
+	from { transform: translateX(48px); opacity: 0; }
+	to { transform: translateX(0); opacity: 1; }
+}

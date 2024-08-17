@@ -1,52 +1,102 @@
-import React from "react";
-import { axiosMain } from "../config/Axios";
-// import Counter from "@component/Counter";
-
-import { GetServerSideProps } from 'next';
-// import Calendar from "@common/calendar/Calendar";
-import axios from "axios";
-// export const getServerSideProps:GetServerSideProps = async(context) => {
-
-// 	const { req } = context;
-// 	const token = req.cookies?.[`CAPT-AUTH`];
-// 	const response = await axios.get('http://localhost:8080/profile', {
-// 		withCredentials: true,
-// 		headers: {
-// 			Authorization: `Bearer ${token}`  // 토큰을 Authorization 헤더에 추가
-// 		}
-// 	});
-// 	// console.log(req);
-// 	// console.log(req.cookies);
-// 	// console.log(token);
-	
-// 	// const response = await axiosMain.get(`/profile`);
-// 	// console.log(response.data);
-// 	// const response = await fetch('http://localhost:8084/api/profile');
-// 	// console.log(response.payload);
-// 	console.log(response);
-// 	// 토큰 유효성 검사 로직
-// 	const tokenIsValid = token === "valid";  // 임시로 토큰의 유효성 검증
-
-// 	if(!token) {
-// 	return {
-// 			redirect: {
-// 			destination: '/login2',
-// 			permanent: false,
-// 			},
-// 		};
-// 	}
-
-// 	/** props를 페이지에 전달 */
-// 	return { props:{} };
-
-// };
+import React, { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCube, EffectCoverflow, Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const Home = () => {
 
 	return (
 	<main>
-		<h1>Next.js / 테스트로직 - Alias + Security</h1>
-		{/* <Counter /> */}
+		{/* Swiper */}
+		<section className={`_section relative box`}>
+			<Swiper loop grabCursor navigation
+				pagination={{ clickable: true }}
+				modules={[ Navigation, Pagination, /* Scrollbar, */ Autoplay ]}
+				autoplay={{
+					delay: 3500,
+					/** swiper 마우스로 동작 후 멈춤 방지 */
+					disableOnInteraction: true,
+					/** 마우스 올려다놨을 때 멈춤 */
+					pauseOnMouseEnter: true
+				}}
+			>
+				<SwiperSlide>
+					<img src={`/image/side_top.webp`} />
+					<div className={`swiper-cover`} />
+					<div className={`swiper-data`}>
+						<ul>
+							<li data-layer={`slide-down`}>
+								<a className={`badge badge_radius bg_g sz_13 clr_w`} href={`#`}>{`WEB 지식1`}</a>
+							</li>
+							<li data-layer={`slide-right`}>
+								<h2 className={`size_h2 mt_16 mb_32`}>{`WEBWEBWEBWEBWEB`}</h2>
+							</li>
+							<li data-layer={`slide-left`}>
+								<p className={`mb_16 sz_13`}>{`2022.12.04`}</p>
+							</li>
+							<li data-layer={`slide-up`}>
+								<a className={`link_underline mt_4`} href={`#`}>{`Read Article`}</a>
+							</li>
+						</ul>
+					</div>
+				</SwiperSlide>
+				<SwiperSlide>
+					<img src={`/image/side_top.webp`} />
+					<div className={`swiper-cover`} />
+					<div className={`swiper-data`}>
+						<ul>
+							<li data-layer={`slide-down`}>
+								<a className={`badge badge_radius bg_g sz_13 clr_w`} href={`#`}>{`WEB 지식2`}</a>
+							</li>
+							<li data-layer={`slide-right`}>
+								<h2 className={`size_h2 mt_16 mb_32`}>{`WEBWEBWEBWEBWEB`}</h2>
+							</li>
+							<li data-layer={`slide-left`}>
+								<p className={`mb_16 sz_13`}>{`2022.12.04`}</p>
+							</li>
+							<li data-layer={`slide-up`}>
+								<a className={`link_underline mt_4`} href={`#`}>{`Read Article`}</a>
+							</li>
+						</ul>
+					</div>
+				</SwiperSlide>
+				<SwiperSlide>
+					<img src={`/image/side_top.webp`} />
+					<div className={`swiper-cover`} />
+					<div className={`swiper-data`}>
+						<ul>
+							<li data-layer={`slide-down`}>
+								<a className={`badge badge_radius bg_g sz_13 clr_w`} href={`#`}>{`WEB 지식3`}</a>
+							</li>
+							<li data-layer={`slide-right`}>
+								<h2 className={`size_h2 mt_16 mb_32`}>{`WEBWEBWEBWEBWEB`}</h2>
+							</li>
+							<li data-layer={`slide-left`}>
+								<p className={`mb_16 sz_13`}>{`2022.12.04`}</p>
+							</li>
+							<li data-layer={`slide-up`}>
+								<a className={`link_underline mt_4`} href={`#`}>{`Read Article`}</a>
+							</li>
+						</ul>
+					</div>
+				</SwiperSlide>
+			</Swiper>
+			<div className={`scroll_wrap`}>
+				{/* <Hills /> */}
+				<div className={`scroll_container`}>
+					<div className={`relative w_100 h_100`}>
+						<div className={`scroll_icon`}>
+							<div className={`sc_mouse box`}>
+								<span></span>
+							</div>
+							<div className={`sc_arrow`}>
+								<span className={`box`}></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
 	</main>
 	);
 

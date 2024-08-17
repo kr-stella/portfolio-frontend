@@ -8,6 +8,10 @@ import Header from "component/Header";
 
 import "../style/main.scss"
 import "../style/header.scss"
+import "../style/swiper.scss"
+
+import "swiper/swiper-bundle.css";
+import "@fortawesome/fontawesome-pro/css/all.min.css";
 
 console.log(`
 

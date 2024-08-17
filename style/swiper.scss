@@ -1,0 +1,203 @@
+@import "animation";
+
+.swiper {
+	height: 97vh;
+
+	.swiper-wrapper { transition-duration: 2000ms; }
+	.swiper-slide {
+		position: relative;
+		flex-shrink: 0;
+		height: 100%;
+		filter: saturate(180%);
+		transition-property: transform;
+		will-change: transform, filter;
+
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			background-position: 50% 50%;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+		.swiper-cover {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: .5;
+			background-color: #000000;
+		}
+		.swiper-data {
+			position: relative;
+			display: flex;
+			margin: 0 auto;
+			width: 90%;
+			height: 100%;
+			color: #ffffff;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+
+			ul { padding-top: 2.5rem; }
+			li {
+				display: block;
+				height: auto;
+				opacity: 0;
+				overflow: hidden;
+				animation-fill-mode: forwards;
+				animation-duration: 0.8s;
+
+				&:nth-child(1) { animation-delay: 100ms; }
+				&:nth-child(2) { animation-delay: 300ms; }
+				&:nth-child(3) { animation-delay: 600ms; }
+				&:nth-child(4) { animation-delay: 1s; }
+			}
+		}
+		&.swiper-slide-active ul {
+			li[data-layer="slide-down"] { animation-name: swiper-data-slide-down; }
+			li[data-layer="slide-up"] { animation-name: swiper-data-slide-up; }
+			li[data-layer="slide-right"] { animation-name: swiper-data-slide-right; }
+			li[data-layer="slide-left"] { animation-name: swiper-data-slide-left; }
+		}
+	}
+
+
+
+
+	.swiper-button-prev, .swiper-button-next {
+		color: #ffffff;
+
+		&::before {
+			content: "";
+			position: relative;
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			border: solid #ffffff;
+			border-width: 0 2px 2px 0;
+			transform-origin: center;
+			transform: rotate(-45deg);
+			transition: transform .7s cubic-bezier(.2, 1, .2, 1);
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 24px;
+			height: 2px;
+			opacity: 0;
+			background: #ffffff;
+			transform: translate(-50%, -50%) scaleX(.5);
+			transform-origin: right;
+			transition: transform .6s cubic-bezier(.2, 1, .2, 1), opacity .5s cubic-bezier(.2, 1, .2, 1);
+		}
+	}
+	.swiper-button-prev {
+		left: 24px;
+		animation: arrow_prev 0.85s ease-out infinite;
+	}
+	.swiper-button-next {
+		right: 24px;
+		animation: arrow_next 0.85s ease-out infinite;
+	}
+	.swiper-button-prev {
+		&::before {
+			transform: rotate(135deg);
+		}
+
+		&::after {
+			transform-origin: left;
+		}
+
+		&:hover {
+			&:not(.swiper-button-disabled) {
+				&::before {
+					transform: translate(-2px, 0) rotate(135deg);
+				}
+
+				&::after {
+					opacity: 1;
+					transform: translate(-50%, -50%) scaleX(1);
+					transition: transform .8s cubic-bezier(.2, 1, .2, 1), opacity .7s cubic-bezier(.2, 1, .2, 1);
+				}
+			}
+		}
+	}
+	.swiper-button-next {
+		&:hover {
+			&:not(.swiper-button-disabled) {
+				&::before {
+					transform: translate(2px, 0) rotate(-45deg);
+				}
+
+				&::after {
+					opacity: 1;
+					transform: translate(-50%, -50%) scaleX(1);
+					transition: transform .8s cubic-bezier(.2, 1, .2, 1), opacity .7s cubic-bezier(.2, 1, .2, 1);
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+		border: 1px solid #dfdfdf;
+
+		&.swiper-pagination-bullet-active {
+			// background-color: #007aff !important;
+			background-color: #ffffff !important;
+		}
+	}
+
+	.swiper-pagination {
+		bottom: 32px !important;
+		padding-bottom: 48px;
+
+		.swiper-pagination-bullet {
+			opacity: .5;
+			background-color: #ffffff;
+			border-radius: 100px;
+			transition: opacity .3s,width .3s ease-in-out;
+			position: relative;
+			width: 0.5rem;
+			height: 0.5rem;
+			border-radius: 0.25rem;
+
+			&.swiper-pagination-bullet-active {
+				opacity: 1;
+				width: 1.5rem;
+			}
+		}
+	}
+
+	// &.entry {
+	// 	height: 576px;
+
+	// 	.swiper-slide {
+	// 		filter: none;
+	// 		transform: none;
+	// 		will-change: inherit;
+	// 	}
+
+	// 	.swiper-wrapper {
+	// 		transform: none;
+	// 	}
+	// }
+}
