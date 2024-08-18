@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCube, EffectCoverflow, Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const Home = () => {
-	console.log(`develeop`);
+	console.log(`swiper`);
 	return (
 	<main>
 		{/* Swiper */}
