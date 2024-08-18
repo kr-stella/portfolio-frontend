@@ -4,8 +4,9 @@ import { AppProps } from "next/app";
 /** 전역 상태관리 */
 import { Provider } from "react-redux";
 import store from "../config/Store";
-import Header from "component/Header";
+import Header from "../component/header";
 
+import "../style/global.scss"
 import "../style/main.scss"
 import "../style/header.scss"
 import "../style/swiper.scss"

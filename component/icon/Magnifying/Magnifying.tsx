@@ -1,14 +1,13 @@
 import React from "react";
 
-const Magnifying = () => {
+export const Magnifying = React.memo(() => {
 	return (
-	<svg
-		xmlns={`http://www.w3.org/2000/svg`}
+	<svg xmlns={`http://www.w3.org/2000/svg`}
 		xmlnsXlink={`http://www.w3.org/1999/xlink`}
 		aria-hidden={true}
 		role={`img`}
-		width={`24`}
-		height={`24`}
+		width={24}
+		height={24}
 		preserveAspectRatio={`xMidYMid meet`}
 		viewBox={`0 0 24 24`}
 		data-icon={`bx:search-alt`}
@@ -23,6 +22,4 @@ const Magnifying = () => {
 		/>
 	</svg>
 	);
-};
-
-export default React.memo(Magnifying);
+});

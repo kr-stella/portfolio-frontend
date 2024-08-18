@@ -16,8 +16,11 @@ import React, { useCallback, useState, useEffect, useRef } from "react";
 // import SvgPanel from "./icon/SvgPanel";
 // import Search from "./icon/Search";
 
-import Magnifying from "./icon/Magnifying";
-import VinylRecord from "./icon/VinylRecord";
+import {Magnifying} from "../icon/Magnifying";
+import {VinylRecord} from "../icon/VinylRecord";
+
+import Styles from "./header.module.scss";
+import classNames from "classnames";
 
 interface Active { side:boolean; modal:boolean; }
 interface Define {
@@ -156,29 +159,32 @@ const Header = ({ active, onActive, onClose }:Define) => {
 	// }, [aside]);
 
 	return (<>
-	<header>
-		<div /* ref={stickyRef} */ className={`header_wrap`}>
-			<div className={`header_box`}>
-				<nav>
-					<ul className={`nav_left`}>
-						<li className={`nav_item`} onClick={() => onActive(`side`)}>
-							<div className={`ico vinyl`} tool-tip={`사이드바 메뉴`}>
+	<header className={classNames(Styles.header)}>
+		<div /* ref={stickyRef} */ className={classNames(Styles[`header-wrap`])}>
+			<div className={classNames(Styles[`header-box`])}>
+				<nav className={classNames(Styles.nav)}>
+					<ul className={classNames(Styles[`nav-left`])}>
+						<li className={classNames(Styles[`nav-item`])} onClick={() => onActive(`side`)}>
+							<div className={classNames(Styles[`nav-ico`], Styles.vinyl)} tool-tip={`사이드바 메뉴`}>
 								<VinylRecord />
 							</div>
 						</li>
-						{/* <li className={`nav_item`}>
-							<p className={`nav_link`}>A</p>
-						</li> */}
+						<li className={classNames(Styles[`nav-item`])}>
+							<p className={classNames(Styles[`nav-link`])}>{`A`}</p>
+						</li>
 					</ul>
-					<a /* href={INIT_SERVER[mode].home} */ className={`nav_brand`} /* onClick={(e) => onRedirect(e)} */>
-						<p>{`Stella`}</p>
-						<p>{`Stella`}</p>
-						<p>{`Stella`}</p>
-						<p>{`Stella`}</p>
+					<a className={classNames(Styles[`nav-brand`])}>
+						<p>{`Stella Dev 👨‍💻`}</p>
 					</a>
-					<div className={`nav_right`}>
-						<div className={`ico`}>
-							<div className={`search`} onClick={() => onActive(`modal`)}>
+					{/* <a href={INIT_SERVER[mode].home} className={`nav_brand`} onClick={(e) => onRedirect(e)}>
+						<p>{`Stella`}</p>
+						<p>{`Stella`}</p>
+						<p>{`Stella`}</p>
+						<p>{`Stella`}</p>
+					</a> */}
+					<div className={classNames(Styles[`nav-right`])}>
+						<div className={classNames(Styles[`nav-ico`])}>
+							<div className={classNames(Styles[`nav-search`])} onClick={() => onActive(`modal`)}>
 								{!active.modal? <Magnifying />:
 								<i className={`fas fa-xmark`} />}
 							</div>
@@ -188,7 +194,6 @@ const Header = ({ active, onActive, onClose }:Define) => {
 			</div>
 		</div>
 	</header>
-	
 	<aside>
 		<div className={`sidebar`}>
 			<div className={`_side`}>

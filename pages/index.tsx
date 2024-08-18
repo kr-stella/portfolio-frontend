@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCube, EffectCoverflow, Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const Home = () => {
-	console.log(`swiper`);
+
 	return (
 	<main>
 		{/* Swiper */}
