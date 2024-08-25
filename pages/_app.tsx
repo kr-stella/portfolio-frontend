@@ -1,10 +1,13 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { AppProps } from "next/app";
+import Router from "next/router";
 
 /** 전역 상태관리 */
 import { Provider } from "react-redux";
 import store from "../config/Store";
-import Header from "../component/header";
+
+import { LoadingScreen } from "component/Loading/Screen";
+import { Header } from "component/Header";
 
 import "../style/global.scss"
 import "../style/main.scss"
@@ -56,8 +59,13 @@ const App = ({ Component, pageProps }:AppProps) => {
 
 	}, [active]);
 
+	useEffect(() => {
+		console.log(`뭐죠?`)
+	}, []);
+
 	return (
 	<Provider store={store}>
+		<LoadingScreen />
 		<Header active={active} onActive={onActive} onClose={onClose} />
 		<Component {...pageProps} />
 	</Provider>

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-export const Magnifying = React.memo(() => {
+export const Magnifying = memo(() => {
 	return (
 	<svg xmlns={`http://www.w3.org/2000/svg`}
 		xmlnsXlink={`http://www.w3.org/1999/xlink`}

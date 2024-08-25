@@ -1,4 +1,4 @@
-@import "breakpoints";
+@import "breakpoint";
 @import "animation";
 
 .side::-webkit-scrollbar { display: none; }
@@ -234,7 +234,7 @@
 // 		// 					opacity: 0.6;
 // 		// 					animation: logo-wave 6s ease-in-out infinite;
 // 		// 				}
-// 		// 				@include resp_min("mobile") { font-size: 24px; }
+// 		// 				@include resp-min("mobile") { font-size: 24px; }
 // 		// 			}
 // 		// 		}
 // 		// 		.nav_right {
@@ -245,15 +245,15 @@
 // 		// 			list-style: none;
 // 		// 		}
 // 		// 	}
-// 		// 	@include resp_min("suf") { max-width: 540px; }
-// 		// 	@include resp_min("tablet") { max-width: 720px; }
-// 		// 	@include resp_min("node") { max-width: 960px; }
-// 		// 	@include resp_min("pc") { max-width: 1140px; }
-// 		// 	@include resp_min("hd") { max-width: 1320px; }
+// 		// 	@include resp-min("suf") { max-width: 540px; }
+// 		// 	@include resp-min("tablet") { max-width: 720px; }
+// 		// 	@include resp-min("node") { max-width: 960px; }
+// 		// 	@include resp-min("pc") { max-width: 1140px; }
+// 		// 	@include resp-min("hd") { max-width: 1320px; }
 // 		// }
 // 		.search_box { display: none; }
 // 		&.is-sticky { padding: 6px 0; }
-// 		@include resp_min("hd") {
+// 		@include resp-min("hd") {
 // 			width: calc(100% - 240px) !important;
 // 			margin-left: calc(((calc(100% - 480px) - 100%) / 2) * -1) !important;
 // 		}
@@ -520,7 +520,7 @@
 // 			}
 // 		}
 // 	}
-// 	@include resp_min("wide") {
+// 	@include resp-min("wide") {
 // 		.header_wrap {
 // 			nav {
 // 				padding: 0;
@@ -954,7 +954,7 @@ aside {
 			background-color: #ffffff;
 		}
 
-		@include resp_min("hd") {
+		@include resp-min("hd") {
 			left: 0 !important;
 		}
 	}

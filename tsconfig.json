@@ -6,7 +6,7 @@
 			"@view/*": ["component/view/*"],
 			"@type/*": ["config/type/*"],
 			"@init/*": ["config/init/*"],
-			"@reducer/*": ["config/reducer/*"],
+			"@reducer/*": ["config/Reducer/*"],
 		},
 		"lib": [ "dom", "dom.iterable", "esnext" ],
 		"allowJs": true,

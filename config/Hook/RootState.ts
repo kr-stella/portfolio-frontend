@@ -1,5 +1,5 @@
 import { TypedUseSelectorHook, useSelector } from "react-redux";
-import { RootState } from "@reducer/IndexReducer";
+import { RootState } from "config/Reducer/IndexReducer";
 
 /**
  * 매번 useSelector 쓸때 RootStateOrAny, any 설정하기 귀찮아서 만든 커스텀 훅

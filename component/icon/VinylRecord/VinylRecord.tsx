@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-export const VinylRecord = React.memo(() => {
+export const VinylRecord = memo(() => {
 	return (
 	<svg className={`fa-compact-disc fa-spin fa-2x`}
 		preserveAspectRatio={`none`}
