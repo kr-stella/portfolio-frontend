@@ -1,0 +1,32 @@
+@import "../../../style/breakpoint";
+
+/** Header 내려오는 애니메이션 */
+@keyframes fade-down {
+	0% { transform:translateY(-16px); opacity:0 }
+	100% { transform: none; opacity:1 }
+}
+
+.header-wrap {
+	&.is-sticky {
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		z-index: 99;
+		padding-top: .5rem;
+		
+		nav {
+			box-shadow: 0 1px 10px var(--color-main-25);
+			background-color: rgba(253, 253, 254, .48);
+			backdrop-filter: blur(6px);
+			border-radius: 4px;
+			animation: fade-down .4s both;
+		}
+	}
+	@include resp-min("hd") {
+		width: calc(100% - 240px) !important;
+		margin-left: 240px;
+	}
+}
+
+.header-box { margin: 0 auto; transition: .25s linear; }

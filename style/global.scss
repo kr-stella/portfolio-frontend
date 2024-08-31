@@ -8,6 +8,23 @@
 
 :root {
 	--color-ci: rgba(33, 137, 255, 1);
+	--color-blue: rgba(54, 85, 255, 1);
+	--color-indigo: rgba(88, 101, 245, 1);
+	--color-purple: rgba(194, 107, 248, 1);
+	--color-pink: rgba(246, 86, 96, 1);
+	--color-red: rgba(255, 56, 0, 1);
+	--color-orange: rgba(255, 104, 56, 1);
+	--color-yellow: rgba(255, 201, 64, 1);
+	--color-green: rgba(55, 168, 120, 1);
+	--color-teal: rgba(33, 165, 167, 1);
+	--color-cyan: rgba(40, 171, 255, 1);
+	--color-gray: rgba(67, 75, 105, 1);
+	--color-primary: rgba(54, 85, 255, 1);
+	--color-secondary: rgba(46, 53, 82, 1);
+	--color-success: rgba(55, 168, 120, 1);
+	--color-info: rgba(40, 171, 255, 1);
+	--color-warning: rgba(255, 201, 64, 1);
+	--color-danger: rgba(246, 86, 96, 1);
 
 	--color-white: rgba(253, 253, 254, 1);
 	--color-white-96: rgba(253, 253, 254, .96);
@@ -29,6 +46,16 @@
 	--color-black-08: rgba(30, 31, 33, .08);
 	--color-black-04: rgba(30, 31, 33, .04);
 
+	--color-navy: rgba(14, 17, 31, 1);
+	--color-navy-96: rgba(14, 17, 31, .96);
+	--color-navy-72: rgba(14, 17, 31, .72);
+	--color-navy-48: rgba(14, 17, 31, .48);
+	--color-navy-36: rgba(14, 17, 31, .36);
+	--color-navy-24: rgba(14, 17, 31, .24);
+	--color-navy-12: rgba(14, 17, 31, .12);
+	--color-navy-08: rgba(14, 17, 31, .08);
+	--color-navy-04: rgba(14, 17, 31, .04);
+
 	--color-main: rgba(30, 31, 33, 1);				// #1e1f21;
 	--color-main-92: rgba(30, 31, 33, .92);		// #1e1f21;
 	--color-main-75: rgba(30, 31, 33, .75);		// #1e1f21;
@@ -42,6 +69,23 @@
 }
 :root[is-dark=true] {
 	--color-ci: rgba(33, 137, 255, 1);
+	--color-blue: rgba(54, 85, 255, 1);
+	--color-indigo: rgba(88, 101, 245, 1);
+	--color-purple: rgba(194, 107, 248, 1);
+	--color-pink: rgba(246, 86, 96, 1);
+	--color-red: rgba(255, 56, 0, 1);
+	--color-orange: rgba(255, 104, 56, 1);
+	--color-yellow: rgba(255, 201, 64, 1);
+	--color-green: rgba(55, 168, 120, 1);
+	--color-teal: rgba(33, 165, 167, 1);
+	--color-cyan: rgba(40, 171, 255, 1);
+	--color-gray: rgba(67, 75, 105, 1);
+	--color-primary: rgba(54, 85, 255, 1);
+	--color-secondary: rgba(46, 53, 82, 1);
+	--color-success: rgba(55, 168, 120, 1);
+	--color-info: rgba(40, 171, 255, 1);
+	--color-warning: rgba(255, 201, 64, 1);
+	--color-danger: rgba(246, 86, 96, 1);
 
 	--color-white: rgba(253, 253, 254, 1);
 	--color-white-92: rgba(253, 253, 254, .92);
@@ -62,6 +106,15 @@
 	--color-black-10: rgba(30, 31, 33, .10);
 	--color-black-05: rgba(30, 31, 33, .05);
 
+	--color-navy: rgba(14, 17, 31, 1);
+	--color-navy-96: rgba(14, 17, 31, .96);
+	--color-navy-72: rgba(14, 17, 31, .72);
+	--color-navy-48: rgba(14, 17, 31, .48);
+	--color-navy-36: rgba(14, 17, 31, .36);
+	--color-navy-24: rgba(14, 17, 31, .24);
+	--color-navy-12: rgba(14, 17, 31, .12);
+	--color-navy-08: rgba(14, 17, 31, .08);
+	--color-navy-04: rgba(14, 17, 31, .04);
 
 
 

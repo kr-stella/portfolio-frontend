@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import Router from "next/router";
 
-import Style from "./loading.screen.module.scss";
+import style from "./loading.screen.module.scss";
 import classNames from "classnames";
 
 export const Screen = memo(() => {
@@ -46,15 +46,12 @@ export const Screen = memo(() => {
 	}, [loading]);
 
 	return (
-	<div ref={loaderRef} className={classNames(
-		Style.loader,
-		Style[`fade-out-box`]
-	)}>
-		<svg className={classNames(Style[`svg-loading`])}
+	<div ref={loaderRef} className={classNames(style.loader, style[`fade-out-box`])}>
+		<svg className={classNames(style[`svg-loading`])}
 			xmlns={`http://www.w3.org/2000/svg`} width={`206`} height={`190.41`}
 			viewBox={`0 0 206 174.41`}
 		>
-			<g className={classNames(Style.head)}>
+			<g className={classNames(style.head)}>
 				<path d={`M315,205a30,30,0,0,1-60,0c0-16.57-2-30,30-30C315,175,315,188.43,315,205Z`} transform={`translate(-181 -146.59)`} fill={`#fcfcfc`}
 					stroke={`#036`} strokeLinejoin={`round`} strokeWidth={`6`} />
 				<path d={`M305.51,185.36S242,219.95,241.69,153.47c0,0,7.91,7.31,17.75,6.78s26.54-13.41,42.72.27S305.51,185.36,305.51,185.36Z`} transform={`translate(-181 -146.59)`}

@@ -1,18 +1,16 @@
 import React, { memo } from "react";
 
-import Styles from "./summary.module.scss";
+import style from "./summary.module.scss";
 import classNames from "classnames";
 
 export const Summary = memo(() => {
 
 	return (
 	<section>
-		<div className={classNames(
-			`container`,
-			Styles[`summary-wrap`]
-		)}
+		<div className={classNames(`container`, style[`summary-wrap`])}
 		style={{
-			height: `97vh`
+			height: `120vh`,
+			boxSizing: `border-box`
 		}}
 		>
 		{`zzgdgdgdgd`}

@@ -1,16 +1,5 @@
-/** Header 내려오는 애니메이션 */
-@keyframes fade-down {
-	0% { transform:translateY(-16px); opacity:0 }
-	100% { transform: none; opacity:1 }
-}
 
-/** Header 툴팁 */
-@keyframes tooltips-vert {
-	to { opacity: 0.9; transform: translate(-50%, 0); }
-}
-@keyframes tooltips-horz {
-	to { opacity: 0.9; transform: translate(0, -50%); }
-}
+
 
 /** 물결 퍼지는 듯한 효과 */
 @keyframes ripple-badge {
@@ -19,14 +8,6 @@
 	100% { transform: scale(1.75); opacity: 0; }
 }
 
-/** 아이콘이 커지고 줄어들면서 흔들리는 효과 */
-@keyframes pager-buzz {
-	from { transform: scale3d(1, 1, 1); }
-	10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
-	30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
-	40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
-	to { transform: scale3d(1, 1, 1); }
-}
 
 /** 아이콘 흔들리는 효과 */
 @keyframes swing-icon {

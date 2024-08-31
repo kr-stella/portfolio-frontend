@@ -1,15 +1,18 @@
 import React from "react";
 
-import { MainSwiper } from "component/Main/Swiper";
-import { MainSummary } from "component/Main/Summary";
+import { MainVideo } from "component/main/video";
+import { MainSwiper } from "component/main/swiper";
+import { MainSummary } from "component/main/summary";
 
-const Home = () => {
+// export default IndexPage;
+interface Define {option:boolean;};
+const Home = ({ option }:Define) => {
 
 	return (
 	<main>
 
 		{/* Swiper */}
-		<MainSwiper />
+		{option? <MainSwiper />:<MainVideo />}
 		{/* Summary ( 총 방문자, 총 포스팅 + Welcome ) */}
 		<MainSummary />
 
@@ -18,4 +21,5 @@ const Home = () => {
 
 };
 
+Home.displayName = `Home`;
 export default React.memo(Home);

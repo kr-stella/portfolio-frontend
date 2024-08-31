@@ -1,13 +1,13 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { AppProps } from "next/app";
-import Router from "next/router";
+import { useRouter } from "next/router";
 
 /** 전역 상태관리 */
 import { Provider } from "react-redux";
 import store from "../config/Store";
 
-import { LoadingScreen } from "component/Loading/Screen";
-import { Header } from "component/Header";
+import { LoadingScreen } from "component/loading/screen";
+import { Active, Header } from "component/header";
 
 import "../style/global.scss"
 import "../style/main.scss"
@@ -30,9 +30,11 @@ console.log(`
 
 `);
 
-interface Active { side:boolean; modal:boolean; }
 const App = ({ Component, pageProps }:AppProps) => {
 	
+	const router = useRouter();
+	const [ option, setOption ] = useState<boolean>(false);
+
 	/** Header 메뉴 활성화 / 비활성화 여부 */
 	const [ active, setActive ] = useState<Active>({
 		side: false, modal: false,
@@ -59,17 +61,27 @@ const App = ({ Component, pageProps }:AppProps) => {
 
 	}, [active]);
 
-	useEffect(() => {
-		console.log(`뭐죠?`)
-	}, []);
+	const onOption = useCallback(() => {
+		setOption(!option);
+	}, [option]);
+
+	/** 메인페이지인지 확인하여 조건부 props 설정 */
+	const isMain = router.pathname === `/`;
+	const optionalProps = {
+		...pageProps,
+		...(isMain? { option }:{})
+	};
 
 	return (
 	<Provider store={store}>
 		<LoadingScreen />
-		<Header active={active} onActive={onActive} onClose={onClose} />
-		<Component {...pageProps} />
+		<Header active={active} onActive={onActive} onClose={onClose}
+			onOption={onOption}
+		/>
+		<Component {...optionalProps} />
 	</Provider>
 	);
+
 };
 
 export default React.memo(App);
