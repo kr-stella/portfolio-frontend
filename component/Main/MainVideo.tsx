@@ -1,11 +1,10 @@
-import React, { memo, useEffect } from "react";
-
-import { CoverText } from "./text";
-
-import style from "./main.video.module.scss";
 import classNames from "classnames";
+import React, { useEffect } from "react";
 
-export const MainVideo = memo(() => {
+import style from "./video/main.video.module.scss";
+import { CoverText } from "./video/text";
+
+const MainVideo = () => {
 
 	useEffect(() => {
 
@@ -33,4 +32,6 @@ export const MainVideo = memo(() => {
 	</section>
 	);
 
-});
+};
+
+export default React.memo(MainVideo);

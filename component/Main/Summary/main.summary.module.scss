@@ -1,0 +1,22 @@
+@import "../../../style/breakpoint";
+
+.summary-wrap {
+	position: relative;
+	margin: 0 auto;
+	padding: 3rem 1rem;
+	width: 100%;
+	box-sizing: border-box;
+
+	@include resp-min("wide") {
+		padding: 5rem 4rem;
+	}
+}
+
+.summary-box {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	> * { box-sizing: border-box; }
+}

@@ -78,3 +78,402 @@
 	75% { opacity: 0; transform: scale(1.5); }
 	100% { opacity: 0; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 빵파레
+@keyframes confetti-cone {
+	0% {
+		transform: translate(40px, 95px) rotate(45deg) scale(1, 1);
+	}
+	15% {
+		transform: translate(10px, 145px) rotate(45deg) scale(1.1, 0.85);
+	}
+	100% {
+		transform: translate(40px, 105px) rotate(45deg) scale(1, 1);
+	}
+}
+@keyframes confetti-strip {
+	0% {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 500;
+		transform: translate(-30px, 30px);
+		opacity: 0;
+	}
+	2% {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 500;
+		transform: translate(-30px, 30px);
+		opacity: 0;
+	}
+	35% {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 900;
+		transform: translate(-2px, 0px);
+		opacity: 1;
+	}
+
+	85% {
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		transform: translate(1px, -5px);
+		opacity: 1;
+	}
+	90% {
+		stroke-dashoffset: 1000;
+		stroke-dashoffset: 1000;
+		transform: translate(2px, -8px);
+		opacity: 0;
+	}
+	100% {
+		stroke-dashoffset: 1000;
+		stroke-dashoffset: 500;
+		transform: translate(2px, -8px);
+		opacity: 0;
+	}
+}
+@keyframes confetti-a {
+	0% {
+		opacity: 0;
+		transform: translate(-30px, 20px) rotate(0);
+	}
+	15% {
+		opacity: 1;
+		transform: translate(25px, -10px) rotate(60deg);
+	}
+	80% {
+		opacity: 1;
+		transform: translate(33px, -18px) rotate(180deg);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(37px, -23px) scale(0.5) rotate(230deg);
+	}
+}
+@keyframes confetti-b {
+	0% {
+		opacity: 0;
+		transform: translate(-30px, 20px) rotate(0);
+	}
+	12% {
+		opacity: 1;
+		transform: translate(25px, -10px) rotate(60deg);
+	}
+	76% {
+		opacity: 1;
+		transform: translate(33px, -18px) rotate(180deg);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(37px, -23px) scale(0.5) rotate(240deg);
+	}
+}
+@keyframes confetti-c {
+	0% {
+		opacity: 0.7;
+		transform: translate(-30px, 20px) rotate(0);
+	}
+	18% {
+		opacity: 1;
+		transform: translate(5px, -10px) rotate(60deg);
+	}
+	76% {
+		opacity: 1;
+		transform: translate(13px, -18px) rotate(180deg);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(17px, -23px) scale(0.5) rotate(230deg);
+	}
+}
+@keyframes confetti-d {
+	0% {
+		opacity: 0.7;
+		transform: translate(-20px, 20px) rotate(0);
+	}
+	18% {
+		opacity: 1;
+		transform: translate(-5px, -10px) rotate(60deg);
+	}
+	76% {
+		opacity: 1;
+		transform: translate(-8px, -18px) rotate(180deg);
+	}
+	100% {
+		opacity: 0;
+		transform: translate(-10px, -23px) scale(0.5) rotate(230deg);
+	}
+}
+
+
+// 불꽃 터지는 효과
+@keyframes firework {
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	10%,
+	70% {
+		opacity: 1;
+	}
+
+	100% {
+		box-shadow:
+			-0.9rem 0rem 0 #5adaea,
+			0.9rem 0rem 0 #fc6394,
+			0rem -0.9rem 0 #f9b732,
+			0rem 0.9rem 0 #f9b732,
+			0.63rem -0.63rem 0 #974cbe,
+			0.63rem 0.63rem 0 #5adaea,
+			-0.63rem -0.63rem 0 #fc6394,
+			-0.63rem 0.63rem 0 #974cbe;
+	}
+}
+
+// 별 모양 색상 변경
+@keyframes star-color1 {
+	0% {
+		fill: #ff7abc;
+	}
+	40% {
+		fill: #ad7aff;
+	}
+	80% {
+		fill: #ffc47a;
+	}
+	100% {
+		fill: #ff7abc;
+	}
+}
+@keyframes star-color2 {
+	0% {
+		fill: #68ffe6;
+	}
+	40% {
+		fill: #ffde43;
+	}
+	80% {
+		fill: #ff8585;
+	}
+	100% {
+		fill: #68ffe6;
+	}
+}
+
+.rainbow-text {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 250% 500%;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: rainbow-text 5s ease-out infinite;
+	box-sizing: border-box;
+}
+// 텍스트 형형색색 변경
+@keyframes rainbow-text {
+	0% {
+		background-position: 0 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0 50%;
+	}
+}
+@keyframes rainbow-scroll {
+	0%, 100% {
+		filter: hue-rotate(0deg);
+	}
+	50% {
+		filter: hue-rotate(360deg);
+	}
+}
+@keyframes text-gradient {
+	0% {
+		background-position:50% 30%
+	}
+	25% {
+		background-position:100% 10%
+	}
+	50% {
+		background-position:100% 90%
+	}
+	75% {
+		background-position:60% 90%
+	}
+	100% {
+		background-position:50% 30%
+	}
+}
+
+.confetti {
+	position: absolute;
+	width: 220px;
+	transform: translate(350px, -110px);
+
+	.confetti-cone {
+		transform-origin: 200px 50px;
+		animation: confetti-cone 1.2s ease infinite;
+	}
+
+	.confetti-0 {
+		fill: #fc6394;
+	}
+	.confetti-1 {
+		fill: #ef3c8a;
+	}
+	.confetti-2 {
+		fill: #5adaea;
+	}
+	.confetti-3 {
+		fill: #974cbe;
+	}
+	.confetti-4 {
+		fill: #3cbecd;
+	}
+	.confetti-5 {
+		fill: #813bbe;
+	}
+	.confetti-6 {
+		fill: #f9b732;
+	}
+
+	#a1 {
+		transform-origin: 276px 246px;
+	}
+	#a2 {
+		transform-origin: 311px 241px;
+	}
+	.confetti-a {
+		animation: confetti-a 1.2s ease-out infinite;
+	}
+
+	#b1 {
+		transform-origin: 195.2px 232.6px;
+	}
+	#b2 {
+		transform-origin: 230.8px 219.8px;
+	}
+	#b3 {
+		transform-origin: 222.8px 190.6px;
+	}
+	#b4 {
+		transform-origin: 262px 188.5px;
+	}
+	#b5 {
+		transform-origin: 282.3px 170.6px;
+	}
+	.confetti-b {
+		animation: confetti-b 1.2s ease-out infinite;
+	}
+
+	#c1 {
+		transform-origin: 174.8px 183.4px;
+	}
+	#c2 {
+		transform-origin: 178.9px 156.2px;
+	}
+	#c3 {
+		transform-origin: 206.7px 140px;
+	}
+	#c4 {
+		transform-origin: 213.5px 120.2px;
+	}
+	.confetti-c {
+		animation: confetti-c 1.2s ease-out infinite;
+	}
+
+	#d1 {
+		transform-origin: 127px 176px;
+	}
+	#d2 {
+		transform-origin: 133px 118px;
+	}
+	#d3 {
+		transform-origin: 152px 100px;
+	}
+	.confetti-d {
+		animation: confetti-d 1.2s ease-out infinite;
+	}
+
+	.strip {
+		fill: none;
+		stroke: #f9b732;
+		stroke-width: 9;
+		stroke-linecap: round;
+		stroke-miterlimit: 10;
+		animation: confetti-strip 1.2s ease infinite;
+	}
+}
+
+.welcome {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+
+	h2 {
+		line-height: 1.375;
+		margin: 0 10px 20px;
+		text-align: center;
+		font-weight: bold;
+		z-index: 10;
+	}
+}
+.firework-container {
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+
+	.firework {
+		position: absolute;
+		width: 0.1rem;
+		height: 0.1rem;
+		border-radius: 50%;
+
+		&.fw-ani {
+			animation: firework 1.4s both infinite;
+		}
+
+		&.fw-pos-1 {
+			top: -8%;
+			left: 16%;
+			transform: scale(2.5) rotate(90deg);
+			animation-delay: 1.3s;
+		}
+		&.fw-pos-2 {
+			top: 0;
+			left: 30%;
+			transform: scale(1.6);
+			animation-delay: 1.5s;
+		}
+		&.fw-pos-3 {
+			bottom: 28%;
+			left: -4%;
+			transform: scale(1.3) rotate(70deg);
+			animation-delay: 1.7s;
+		}
+		&.fw-pos-4 {
+			bottom: 24%;
+			right: -4%;
+			transform: scale(1.8) rotate(40deg);
+			animation-delay: 1.9s;
+		}
+	}
+}

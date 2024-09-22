@@ -1,8 +1,7 @@
+import MainSummary from "component/main/MainSummary";
+import MainSwiper from "component/main/MainSwiper";
+import MainVideo from "component/main/MainVideo";
 import React from "react";
-
-import { MainVideo } from "component/main/video";
-import { MainSwiper } from "component/main/swiper";
-import { MainSummary } from "component/main/summary";
 
 // export default IndexPage;
 interface Define {option:boolean;};

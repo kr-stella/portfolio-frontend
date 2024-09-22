@@ -1,11 +1,8 @@
-import React, { memo } from "react";
-
+import React from "react";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-export const MainSwiper = memo(() => {
-
-	return (
+const MainSwiper = () => (
 	<section>
 		<Swiper loop grabCursor navigation
 			pagination={{ clickable: true }}
@@ -95,6 +92,6 @@ export const MainSwiper = memo(() => {
 			</div>
 		</div>
 	</section>
-	);
+);
 
-});
+export default React.memo(MainSwiper);

@@ -1,1 +1,2 @@
-export { Summary as MainSummary } from "./Summary";
+export { Card } from "./card";
+export { Welcome } from "./welcome";
