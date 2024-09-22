@@ -12,15 +12,17 @@
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
+
+	.nav-item {
+		cursor: pointer;
+		margin: 0 0.5rem;
+		color: var(--color-white-48);
+		transition: .25s ease;
+
+		&:hover { color: var(--color-white-72); }
+		&:first-child { margin: 0; }
+	}
 }
-
-.nav-item {
-	cursor: pointer;
-	margin: 0 0.5rem;
-
-	&:first-child { margin: 0; }
-}
-
 .nav-link {
 	display: flex;
 	align-items: center;
@@ -30,15 +32,7 @@
 	padding-left: 0.75rem;
 	padding-right: 0.75rem;
 	font-size: 14px;
-	transition: .2s ease-in-out;
-
-	.ico svg {
-		width: 26px;
-		height: 26px;
-		fill: rgba(255, 255, 255, 0.55);
-	}
 }
-
 .icon {
 	position: relative;
 	display: flex;
@@ -48,8 +42,8 @@
 	justify-content: center;
 
 	svg { fill: var(--color-white-48); transition: .25s ease; }
+	&:hover > svg { fill: var(--color-white-72); }
 }
-
 .vinyl {
 	&::before {
 		content: "";
@@ -94,5 +88,17 @@
 			display: block;
 			animation: tooltips-horz 300ms ease-out forwards;
 		}
+	}
+}
+
+/** sticky */
+.nav-left.is-sticky {
+	.nav-item {
+		color: var(--color-black-48);
+		&:hover { color: var(--color-black-72); }
+	}
+	.icon {
+		svg { fill: var(--color-black-48); }
+		&:hover > svg { fill: var(--color-black-72); }
 	}
 }

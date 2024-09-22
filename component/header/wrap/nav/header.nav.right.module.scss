@@ -13,8 +13,21 @@
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
-}
 
+	&.is-sticky .nav-icon .icon {
+		svg, i {
+			fill: var(--color-black-48);
+			color: var(--color-black-48);
+
+			&:hover {
+				color: var(--color-ci);
+			}
+		}
+		&.close i:hover {
+			color: red;
+		}
+	}
+}
 .nav-icon {
 	position: relative;
 	display: inline-flex;
@@ -26,16 +39,15 @@
 	svg, i {
 		fill: var(--color-white-48);
 		color: var(--color-white-48);
-		transition: .25s ease;
+		transition: 0.25s ease;
 	}
 }
-
 .icon {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 
-	* {
+	svg, i {
 		display: inline-flex;
 		width: 28px;
 		height: 28px;
@@ -49,5 +61,6 @@
 			animation: pager-buzz 1.8s linear infinite;
 		}
 	}
-	&.close *:hover { color: red; }
+
+	&.close i:hover { color: red; }
 }

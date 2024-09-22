@@ -1,7 +1,6 @@
-import React, { memo } from "react";
+import React from "react";
 
-export const Magnifying = memo(() => {
-	return (
+const Magnifying = () => (
 	<svg xmlns={`http://www.w3.org/2000/svg`}
 		xmlnsXlink={`http://www.w3.org/1999/xlink`}
 		aria-hidden={true}
@@ -21,5 +20,6 @@ export const Magnifying = memo(() => {
 			d={`M11.412 8.586c.379.38.588.882.588 1.414h2a3.977 3.977 0 0 0-1.174-2.828c-1.514-1.512-4.139-1.512-5.652 0l1.412 1.416c.76-.758 2.07-.756 2.826-.002z`}
 		/>
 	</svg>
-	);
-});
+);
+
+export default React.memo(Magnifying);

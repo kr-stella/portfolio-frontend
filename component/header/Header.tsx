@@ -1,13 +1,13 @@
-import React, { memo } from "react";
+import classNames from "classnames";
+import React from "react";
 
-import { Active } from ".";
-import { HeaderWrap } from "./wrap";
+import { Active } from "@type/header";
 
 import style from "./header.module.scss";
-import classNames from "classnames";
+import HeaderWrap from "./wrap/HeaderWrap";
 
 interface Define {active:Active; onActive:(v:keyof Active) => void; onClose:() => void; onOption:() => void;};
-export const Header = memo(({ active, onActive, onClose, onOption }:Define) => (<>
+const Header = ({ active, onActive, onClose, onOption }:Define) => (<>
 	<header className={classNames(style.header)}>
 		<HeaderWrap active={active} onActive={onActive} onClose={onClose} onOption={onOption} />
 	</header>
@@ -32,4 +32,6 @@ export const Header = memo(({ active, onActive, onClose, onOption }:Define) => (
 			</div>
 		</div>
 	</aside>
-</>));
+</>);
+
+export default React.memo(Header);

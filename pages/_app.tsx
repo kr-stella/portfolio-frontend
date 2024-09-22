@@ -1,21 +1,21 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { AppProps } from "next/app";
-import { useRouter } from "next/router";
-
-/** 전역 상태관리 */
-import { Provider } from "react-redux";
-import store from "../config/Store";
-
-import { LoadingScreen } from "component/loading/screen";
-import { Active, Header } from "component/header";
-
-import "../style/global.scss"
-import "../style/main.scss"
-import "../style/header.scss"
-import "../style/swiper.scss"
-
+import "../style/global.scss";
+import "../style/main.scss";
+import "../style/header.scss";
+import "../style/swiper.scss";
 import "swiper/swiper-bundle.css";
 import "@fortawesome/fontawesome-pro/css/all.min.css";
+
+import Header from "component/header/Header";
+import LoadingScreen from "component/loading/LoadingScreen";
+import { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import React, { useCallback, useEffect, useState } from "react";
+/** 전역 상태관리 */
+import { Provider } from "react-redux";
+
+import { Active } from "@type/header";
+
+import store from "../config/Store";
 
 console.log(`
 

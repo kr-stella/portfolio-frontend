@@ -1,1 +1,0 @@
-export { Magnifying } from "./Magnifying";

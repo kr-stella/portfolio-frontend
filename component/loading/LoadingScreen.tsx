@@ -1,10 +1,10 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from "react";
+import classNames from "classnames";
 import Router from "next/router";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
 import style from "./loading.screen.module.scss";
-import classNames from "classnames";
 
-export const Screen = memo(() => {
+const LoadingScreen = () => {
 
 	/** 로딩상태 */
 	const [ loading, setLoading ] = useState(true);
@@ -80,4 +80,6 @@ export const Screen = memo(() => {
 		</svg>
 	</div>
 	);
-});
+};
+
+export default React.memo(LoadingScreen);

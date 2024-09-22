@@ -1,18 +1,20 @@
-import React, { memo } from "react";
+import classNames from "classnames";
+import React from "react";
 
-import { Active } from "../..";
-import { NavLeft } from "./left";
-import { NavBrand } from "./brand";
-import { NavRight } from "./right";
+import { Active } from "@type/header";
 
 import style from "./header.nav.module.scss";
-import classNames from "classnames";
+import NavBrand from "./NavBrand";
+import NavLeft from "./NavLeft";
+import NavRight from "./NavRight";
 
-interface Define {active:Active; onActive:(v:keyof Active) => void; onClose:() => void; onOption:() => void;};
-export const HeaderNav = memo(({ active, onActive, onClose, onOption }:Define) => (
+interface Define {active:Active; isSticky:boolean; onActive:(v:keyof Active) => void; onClose:() => void; onOption:() => void;};
+const HeaderNav = ({ active, isSticky, onActive, onClose, onOption }:Define) => (
 	<nav className={classNames(style.nav)}>
-		<NavLeft onActive={onActive} onOption={onOption} />
-		<NavBrand onClose={onClose} />
-		<NavRight active={active} onActive={onActive} />
+		<NavLeft isSticky={isSticky} onActive={onActive} onOption={onOption} />
+		<NavBrand isSticky={isSticky} onClose={onClose} />
+		<NavRight isSticky={isSticky} active={active} onActive={onActive} />
 	</nav>
-));
+);
+
+export default React.memo(HeaderNav);
