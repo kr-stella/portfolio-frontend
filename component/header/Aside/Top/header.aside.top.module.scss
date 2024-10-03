@@ -1,0 +1,19 @@
+/** 다크 모드 */
+html[is-dark="true"] {
+	.aside-top {
+		background-image: url("./aside-top-dark.webp");
+		background-position: 0px -48px;
+	}
+}
+
+.aside-top {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 96px;
+	z-index: 1;
+	background-image: url("./aside-top.webp");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}

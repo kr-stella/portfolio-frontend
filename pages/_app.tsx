@@ -1,21 +1,23 @@
 import "../style/global.scss";
 import "../style/main.scss";
-import "../style/header.scss";
+import "../style/footer.scss";
 import "../style/swiper.scss";
 import "swiper/swiper-bundle.css";
 import "@fortawesome/fontawesome-pro/css/all.min.css";
 
-import Header from "component/header/Header";
-import LoadingScreen from "component/loading/LoadingScreen";
+import { Screen } from "component/loading";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { lazy, Suspense, useCallback, useEffect, useState } from "react";
 /** 전역 상태관리 */
 import { Provider } from "react-redux";
 
-import { Active } from "@type/header";
+import { Active } from "@type/Header";
 
 import store from "../config/Store";
+
+const Header = lazy(() => import("component/header"));
+const Footer = lazy(() => import("component/footer"));
 
 console.log(`
 
@@ -29,6 +31,8 @@ console.log(`
  \\______/  \\______/ |__/     |__/|______/|__/  \\__/
 
 `);
+
+const mode = process.env.NODE_ENV;
 
 const App = ({ Component, pageProps }:AppProps) => {
 	
@@ -74,11 +78,14 @@ const App = ({ Component, pageProps }:AppProps) => {
 
 	return (
 	<Provider store={store}>
-		<LoadingScreen />
+		<Screen />
+		<Suspense>
 		<Header active={active} onActive={onActive} onClose={onClose}
 			onOption={onOption}
 		/>
+		</Suspense>
 		<Component {...optionalProps} />
+		<Footer mode={mode} />
 	</Provider>
 	);
 

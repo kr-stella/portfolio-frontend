@@ -1,5 +1,12 @@
-
-
+/** 공용 */
+/** 아이콘이 커지고 줄어들면서 흔들리는 효과 */
+@keyframes pager-buzz {
+	from { transform: scale3d(1, 1, 1); }
+	10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+	30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+	40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+	to { transform: scale3d(1, 1, 1); }
+}
 
 /** 물결 퍼지는 듯한 효과 */
 @keyframes ripple-badge {
@@ -7,7 +14,6 @@
 	75% { transform: scale(1.375); opacity: 1; }
 	100% { transform: scale(1.75); opacity: 0; }
 }
-
 
 /** 아이콘 흔들리는 효과 */
 @keyframes swing-icon {

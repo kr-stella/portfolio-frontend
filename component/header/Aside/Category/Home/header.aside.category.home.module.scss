@@ -1,0 +1,22 @@
+/** Rainbow Text */
+@keyframes gradient-text {
+	0% { background-position: 0 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0 50%; }
+}
+
+.link {
+	position: relative;
+	display: inline-block;
+	margin-left: 24px;
+	font-size: 0.92rem;
+	font-weight: bold;
+}
+
+.gradient-text {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 250% 500%;
+	background-clip: text;
+	animation: gradient-text 5s ease-out infinite;
+	-webkit-text-fill-color: transparent;
+};

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import Confetti from "component/icon/Confetti";
+import { Confetti } from "component/icon";
 import React, { memo } from "react";
 
 import style from "./main.summary.welcome.module.scss";
