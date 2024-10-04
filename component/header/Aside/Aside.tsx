@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { lazy, Suspense } from "react";
+import React, { lazy } from "react";
 
 import { Active } from "@type/Header";
 
@@ -10,12 +10,11 @@ const Profile = lazy(() => import("./Profile"));
 const Box = lazy(() => import("./Box"));
 const Category = lazy(() => import("./Category"));
 
-interface Define {/* mode:string; profile:ProfileType|undefined; */ onActive:(v:keyof Active) => void;
-	active:boolean;
-	onClose:() => void;
-};
-const Aside = ({ /* mode, profile, */ active, onActive, onClose }:Define) => (
-	<aside className={classNames(style[`header-aside`])}>
+interface Define {active:boolean; onActive:(v:keyof Active) => void;};
+const Aside = ({ active, onActive }:Define) => (
+	<aside className={classNames(
+		style[`header-aside`], active && style.active
+	)}>
 		<nav className={classNames(style[`aside-nav`])}>
 
 			{/* Aside 최상단 배경 */}

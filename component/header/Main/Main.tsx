@@ -1,5 +1,3 @@
-// import "./header.main.scss";
-
 import classNames from "classnames";
 import React, { Suspense, useCallback, useEffect, useRef, useState } from "react";
 

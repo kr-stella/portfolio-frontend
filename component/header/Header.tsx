@@ -10,7 +10,7 @@ interface Define {active:Active; onActive:(v:keyof Active) => void; onClose:() =
 const Header = ({ active, onActive, onClose, onOption }:Define) => (
 	<>
 		<Main active={active} onActive={onActive} onClose={onClose} onOption={onOption} />
-		<Aside active={active.side} onActive={onActive} onClose={onClose} />
+		<Aside active={active.side} onActive={onActive} />
 		<Cover active={active} onClose={onClose} />
 	</>
 );
