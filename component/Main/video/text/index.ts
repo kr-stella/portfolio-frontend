@@ -1,0 +1,1 @@
+export { CoverText } from "./CoverText";

@@ -1,0 +1,53 @@
+@import "../../../style/breakpoint";
+
+.header-aside nav::-webkit-scrollbar { display: none; }
+
+/** 다크 모드 */
+html[is-dark="true"] {
+	.header-aside {
+		background-image: url("./aside-dark.webp");
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+
+		&::before { background-color: rgba(29, 29, 29, 0.6); }
+	}
+}
+
+// .root.on.side .header-aside { left: 0; }
+.header-aside {
+	position: relative;
+	position: fixed;
+	top: 0;
+	left: -240px;
+	width: 240px;
+	height: 100%;
+	padding: 0;
+	z-index: 9;
+	overflow: hidden;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16),
+		0 2px 8px 0 rgba(0, 0, 0, 0.12);
+	transition: left .25s ease;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--color-white);
+	}
+	&.active { left: 0; }
+	@include resp-min("hd") { left: 0 !important; }
+}
+
+.aside-nav {
+	position: absolute;
+	padding: 16px 0;
+	width: 252px;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	box-sizing: border-box;
+}

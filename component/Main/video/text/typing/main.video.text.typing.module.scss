@@ -1,0 +1,15 @@
+@import "../../../../../style/breakpoint";
+
+.typing-wrap {
+	margin-bottom: 48px;
+	font-size: calc(1.625rem + 4.5vw);
+	font-weight: normal;
+	line-height: 1.2;
+
+	@include resp-min("pc") { font-size: 5rem; }
+}
+
+.typing { color: var(--color-yellow); }
+.typing-br {
+	@include resp-min("suf") { display: none; }
+}

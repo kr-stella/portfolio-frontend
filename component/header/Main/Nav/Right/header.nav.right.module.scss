@@ -1,0 +1,66 @@
+/** 아이콘이 커지고 줄어들면서 흔들리는 효과 */
+@keyframes pager-buzz {
+	from { transform: scale3d(1, 1, 1); }
+	10%, 20% { transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+	30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+	40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+	to { transform: scale3d(1, 1, 1); }
+}
+
+.nav-right {
+	display: inline-flex;
+	flex-direction: row;
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+
+	&.is-sticky .nav-icon .icon {
+		svg, i {
+			fill: var(--color-black-48);
+			color: var(--color-black-48);
+
+			&:hover {
+				color: var(--color-ci);
+			}
+		}
+		&.close i:hover {
+			color: red;
+		}
+	}
+}
+.nav-icon {
+	position: relative;
+	display: inline-flex;
+	flex-flow: column;
+	height: 4.75rem;
+	align-items: center;
+	justify-content: center;
+
+	svg, i {
+		fill: var(--color-white-48);
+		color: var(--color-white-48);
+		transition: 0.25s ease;
+	}
+}
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	svg, i {
+		display: inline-flex;
+		width: 28px;
+		height: 28px;
+		align-items: center;
+		justify-content: center;
+		font-size: 24px;
+		cursor: pointer;
+
+		&:hover {
+			color: var(--color-ci);
+			animation: pager-buzz 1.8s linear infinite;
+		}
+	}
+
+	&.close i:hover { color: red; }
+}

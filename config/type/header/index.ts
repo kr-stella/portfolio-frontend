@@ -1,0 +1,1 @@
+export interface Active {side:boolean; modal:boolean;};

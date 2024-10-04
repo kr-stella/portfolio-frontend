@@ -7,7 +7,7 @@
 			"@component/*": ["component/common/*"],
 			"@view/*": ["component/view/*"],
 			"@type/*": ["config/type/*"],
-			"@init/*": ["config/init/*"],
+			"@init": ["config/init"],
 			"@reducer/*": ["config/reducer/*"],
 			
 			/** 공용 */

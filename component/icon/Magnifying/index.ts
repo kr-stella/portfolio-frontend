@@ -1,0 +1,1 @@
+export { Magnifying } from "./Magnifying";

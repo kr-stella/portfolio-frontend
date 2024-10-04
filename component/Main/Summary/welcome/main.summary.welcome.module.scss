@@ -1,0 +1,18 @@
+@import "../../../../style/breakpoint";
+
+.welcome-wrap {
+	flex-shrink: 0;
+	padding: 0 12px;
+	margin-bottom: 3rem;
+	width: 100%;
+	max-width: 100%;
+
+	@include resp_min("wide") {
+		flex: 0 0 auto;
+		padding: 0;
+		margin-bottom: 0;
+		width: 50%;
+		order: 2;
+	}
+	@include resp-min("pc") { width: 41.66666667%; }
+}

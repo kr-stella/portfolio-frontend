@@ -1,0 +1,31 @@
+.header {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	margin-bottom: 32px;
+	padding: 6px 16px;
+	color: var(--color-yellow);
+	text-transform: uppercase;
+	border: 2px solid;
+	border-color: var(--color-yellow);
+	border-radius: 12px;
+	background-color: var(--color-black-08);
+
+	&::after {
+		position: absolute;
+		content: "";
+		top: 105%;
+		left: 50%;
+		width: 0;
+		height: 0;
+		margin: 0 auto;
+		background: none;
+		border-width: 6px;
+		border-style: solid;
+		border-top-color: var(--color-yellow);
+		border-left-color: transparent;
+		border-right-color: transparent;
+		border-bottom-color: transparent;
+		transform: translate(-50%, 0%);
+	}
+}
